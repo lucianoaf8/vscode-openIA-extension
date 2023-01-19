@@ -1,9 +1,17 @@
-Here are the general steps you can follow to create an extension:
+Install the necessary dependencies for your extension by running npm install <dependency-name>. For example, you will need to install the openai package to interact with the OpenAI API.
 
-    Create a new folder for your extension and initialize it as a Node.js project.
-    Install the necessary dependencies such as vscode and openai npm packages.
-    Create a new file for your extension and use the vscode package to create a new extension.
-    Write the code to make requests to the OpenAI API and process the response.
-    Register your extension's commands and create a UI for the extension, such as a new button in the editor or a new command in the command palette.
-    Test your extension by running it in the VS Code Extension Development Host.
-    Package and distribute your extension by creating a VSIX file.
+Create a new JavaScript file, for example, index.js in the src folder, which will contain the main logic of your extension.
+
+In index.js, you can use the vscode module to interact with the VSCode editor, such as registering new commands, creating new panels, etc.
+
+In the same file, you will need to import the openai package and use it to interact with the OpenAI API. You will also need to import the package dotenv, to load the api_key from a .env file.
+
+In index.js you can create a new function that will be called when the user triggers the command you defined in the package.json file. This function should use the vscode API to get the current text selection in the editor and send it to the OpenAI API for processing.
+
+You can use the vscode.window.showInformationMessage or vscode.window.showErrorMessage to show the result or errors to the user.
+
+Once you have the basic functionality working, you can add additional features and polish the extension.
+
+To test your extension, you can use the F5 key to launch the Extension Development Host, where you can test your extension.
+
+When you're satisfied with your extension, you can package it by running vsce package and then you can publish it to the Visual Studio Code Marketplace.
