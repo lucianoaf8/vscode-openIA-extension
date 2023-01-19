@@ -1,0 +1,19 @@
+{
+  "name": "vscode-openia-extension",
+  "version": "1.0.0",
+  "description": "VSCode extension for OpenIA",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucianoaf8/vscode-openIA-extension.git"
+  },
+  "author": "Luciano Almeida",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucianoaf8/vscode-openIA-extension/issues"
+  },
+  "homepage": "https://github.com/lucianoaf8/vscode-openIA-extension#readme"
+}

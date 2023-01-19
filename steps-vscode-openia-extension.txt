@@ -1,0 +1,9 @@
+Here are the general steps you can follow to create an extension:
+
+    Create a new folder for your extension and initialize it as a Node.js project.
+    Install the necessary dependencies such as vscode and openai npm packages.
+    Create a new file for your extension and use the vscode package to create a new extension.
+    Write the code to make requests to the OpenAI API and process the response.
+    Register your extension's commands and create a UI for the extension, such as a new button in the editor or a new command in the command palette.
+    Test your extension by running it in the VS Code Extension Development Host.
+    Package and distribute your extension by creating a VSIX file.
