@@ -1,12 +1,14 @@
 {
   "name": "vscode-openia-extension",
   "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.74.3"
+  },
   "description": "VSCode extension for OpenAI",
   "main": "index.js",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "openai": "^2.0.0",
-    "vscode": "^1.52.0"
+    "openai": "^3.1.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,17 +25,20 @@
   "homepage": "https://github.com/lucianoaf8/vscode-openIA-extension#readme",
   "contributes": {
     "commands": [
-        {
+      {
+        "command": "extension.openai",
+        "title": "OpenAI: Complete text",
+        "keybindings": [
+          {
             "command": "extension.openai",
-            "title": "OpenAI: Complete text",
-            "keybindings": [
-                {
-                  "command": "extension.openai",
-                  "key": "CTRL+F1",
-                  "when": "editorTextFocus"
-                }
-            ]
-        }
+            "key": "CTRL+F1",
+            "when": "editorTextFocus"
+          }
+        ]
+      }
     ]
-  }
+  },
+  "activationEvents": [
+    "onCommand:extension.openai"
+  ]
 }
