@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lucianoaf8/vscode-openIA-extension.git"
+    "url": "git+https://github.com/lucianoaf8/vscode-openIA-extension"
   },
   "author": "Luciano Almeida",
   "license": "ISC",
