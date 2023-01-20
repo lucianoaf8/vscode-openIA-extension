@@ -1,7 +1,13 @@
 const vscode = require('vscode');
 require('dotenv').config()
-const openai = require('openai');
-openai.apiKey = process.env.OPENAI_KEY;
+const { Configuration, OpenAIApi } = require("openai");
+
+const configuration = new Configuration({
+  apiKey: process.env.OPENAI_API_KEY,
+});
+
+const openai = new OpenAIApi(configuration);
+
 function openaiCommand() {
     let editor = vscode.window.activeTextEditor;
     if (!editor) {
@@ -11,22 +17,18 @@ function openaiCommand() {
     let selection = editor.selection;
     let text = editor.document.getText(selection);
 
-    // calling the OpenAI API
-    openai.completions({
-        prompt: text,
-        model: "text-davinci-002",
-        max_tokens: 100,
-        n: 1,
-        stop: '.'
+    openai.createCompletion({
+      model: "text-davinci-002",
+      prompt: text,
+      max_tokens: 7,
+      temperature: 0,
     })
-        .then((response) => {
-            // handle the response here
-            vscode.window.showInformationMessage(response.choices[0].text);
-        })
-        .catch((error) => {
-            // handle the error here
-            vscode.window.showErrorMessage(error);
-        });
+    .then((response) => {
+      vscode.window.showInformationMessage(response.choices[0].text);
+    })
+    .catch((error) => {
+      vscode.window.showErrorMessage(error);
+    });
 }
 
 function activate(context) {
